@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const Category = props => (
     <tr>
-        <td>{props.category.categories}</td>
+        <td>{props.category.categoryLabel}</td>
 
         <td>
             <a href="#" onClick={() => { props.deleteCategory(props.category._id) }}>delete</a>
@@ -43,9 +43,9 @@ export default class CategoriesList extends Component {
     }
 
     categoriesList() {
-        return this.state.categories.map(currentcategory => {
-            return <Category category={currentcategory} deleteCategory={this.deleteCategory}
-                             key={currentcategory._id}/>;
+        return this.state.categories.map(currentCategory => {
+            return <Category category={currentCategory} deleteCategory={this.deleteCategory}
+                             key={currentCategory._id}/>;
         })
 
     }

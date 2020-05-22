@@ -11,6 +11,7 @@ router.route('/').get((req, res) => {
 router.route('/add').post((req, res) => {
     const first_name = req.body.first_name;
     const last_name = req.body.last_name;
+    const user_type = "Store Manager";
     const email= req.body.email;
     const username = req.body.username;
     const password = req.body.password;
@@ -18,6 +19,7 @@ router.route('/add').post((req, res) => {
     const newUser = new User({
         first_name,
         last_name,
+        user_type,
         email,
         username,
         password
@@ -45,6 +47,7 @@ router.route('/update/:id').post((req, res) => {
         .then(user => {
             User.first_name = req.body.first_name;
             User.last_name = req.body.last_name;
+            User.user_type = req.body.user_type;
             User.email = req.body.email;
             User.username = req.body.username;
             User.password = req.body.password;

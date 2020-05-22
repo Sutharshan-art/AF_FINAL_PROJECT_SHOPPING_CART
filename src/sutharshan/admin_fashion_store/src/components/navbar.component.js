@@ -8,7 +8,7 @@ export default class Navbar extends Component {
             <nav className="navbar navbar-dark bg-dark navbar-expand-lg">
                 <Link to="/" className="navbar-brand">AdminPage</Link>
                 <div className="collpase navbar-collapse">
-                    <ul className="navbar-nav mr-auto">
+                    <ul className="navbar-nav flex-lg-nowrap">
                         <li className="navbar-item">
                             <Link to="/" className="nav-link">Categories</Link>
                         </li>

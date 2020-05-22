@@ -26,7 +26,7 @@ const registerRoutes =require('./Routes/register');
 
 app.use('/users',userRoutes);
 app.use('/categories',categoryRoutes);
-app.use('./register',registerRoutes);
+app.use('/register',registerRoutes);
 
 app.listen(port, () => {
     console.log("Server is running on port: " + port);
