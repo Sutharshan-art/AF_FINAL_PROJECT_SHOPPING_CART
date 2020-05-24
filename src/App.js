@@ -1,25 +1,37 @@
 import React from 'react';
-import logo from './logo.svg';
+import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css';
+import Home from "./pages/Home";
+import Phone from "./pages/Phone";
+import Error from "./pages/Error";
+import Product from "./pages/Product";
+import AddProduct from "./pages/AddProduct";
+import Navbar from "./Components/Navbar";
+
+import {Route, Switch} from 'react-router-dom'
+import ProductDetails from "./pages/productDetails";
+import EachProduct from "./pages/EachProduct";
+import Cart from "./pages/Cart";
+import BuyNow from "./pages/BuyNow";
+import Individualproduct from "./pages/Individualproduct";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        <Navbar/>
+      <Switch>
+          <Route exact path="/" component={ProductDetails}/>
+          <Route exact path="/Product/" component={Product}/>
+          <Route exact path="/AddProduct/" component={AddProduct}/>
+          <Route exact path="/EachProduct/:_id" component={EachProduct}/>
+          <Route exact path="/Cart/" component={Cart}/>
+          <Route exact path="/BuyNow/:_id" component={BuyNow}/>
+          <Route exact path={"/Individualproduct/:_id"} component={Individualproduct}/>
+          <Route exact path="/Phone/:slug" component={Phone}/>
+          <Route component={Error}/>
+      </Switch>
+    </>
   );
 }
 
