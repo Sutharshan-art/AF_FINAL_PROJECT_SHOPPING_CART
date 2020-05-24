@@ -89,7 +89,8 @@ export default class CreateStoreManager extends Component {
 
             <div>
                 <h3>Create New Store Manager</h3>
-                <form onSubmit={this.onSubmit}>
+
+                <form onSubmit={this.onSubmit} method="POST" action="/send">
                     <div className="form-group">
                         <label> First Name : </label>
                         <input type="text"

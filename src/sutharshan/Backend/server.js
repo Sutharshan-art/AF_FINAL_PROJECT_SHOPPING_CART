@@ -9,7 +9,6 @@ const port=process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-
 const uri = "mongodb+srv://user30:user_30@cluster0-udmfl.mongodb.net/test?retryWrites=true&w=majority";
 
 mongoose.connect(uri,{useNewUrlParser:true, useCreateIndex:true , useUnifiedTopology:true}
@@ -27,6 +26,7 @@ const registerRoutes =require('./Routes/register');
 app.use('/users',userRoutes);
 app.use('/categories',categoryRoutes);
 app.use('/register',registerRoutes);
+
 
 app.listen(port, () => {
     console.log("Server is running on port: " + port);
